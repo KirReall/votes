@@ -1,0 +1,58 @@
+<!-- Indices written at Tue, 13 Dec 2011 17:19:45 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="published" direction="asc"/>
+        <property name="rate" direction="desc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>
+	
+	<datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="rate" direction="desc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="published" direction="asc"/>
+        <property name="date" direction="desc"/>
+        <property name="absoluteRate" direction="desc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="date" direction="desc"/>
+        <property name="absoluteRate" direction="desc"/>
+    </datastore-index>
+    
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="authorId" direction="asc"/>
+        <property name="date" direction="desc"/>
+        <property name="absoluteRate" direction="desc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="published" direction="asc"/>
+        <property name="absoluteRate" direction="desc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>
+
+    <datastore-index kind="Post" ancestor="false" source="manual">
+        <property name="absoluteRate" direction="desc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>    
+    
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="OtherAnswer" ancestor="false" source="manual">
+        <property name="idOfPost" direction="asc"/>
+        <property name="rate" direction="desc"/>
+    </datastore-index>
+    
+    <datastore-index kind="UserAccount" ancestor="false" source="manual">
+        <property name="uid" direction="asc"/>
+        <property name="service" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

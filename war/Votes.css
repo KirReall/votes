@@ -1,0 +1,509 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+#header {
+  height: 140px;
+  margin: 0;	
+  min-width: 738px;
+  padding: 2px 2px 3px 2px;
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  right: 0px;	
+  z-index: 10;
+}
+
+#copyright{
+	margin-top: 25px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+#headerLinks {
+ 
+  padding-top: 112px;
+
+}
+
+#footerLinks {
+	padding-bottom: 20px;
+}
+
+#login {
+	position: fixed;
+	top: 5px;
+	left: 5px;
+}
+
+.links {
+	padding-right:  280px;
+	white-space: nowrap;
+	position: relative;	
+}
+
+.links ul li {
+  display: inline;
+  list-style: none outside none;
+}
+
+.links div{
+ left: auto;
+ white-space: nowrap;
+
+}
+
+.linkList {
+	width: 470px;
+	margin: 10px 279px auto 0px;
+	padding-left: 20%;
+}
+
+.linkElement {
+	margin: 7px 5px 0px 5px;
+	float: left;
+}
+
+/** frame of posts */
+.body {
+  width:750px;
+  margin: 30px auto 30px;
+}
+
+.leftborder {
+  background: url('res/left.gif') left 39px no-repeat; 
+  padding-left:25px;
+}
+
+.rightborder {
+  background: url('res/right.gif') right 39px no-repeat;
+  padding-right:25px;
+}
+
+.center {
+  border-top :3px solid;
+  border-bottom : 3px solid;
+  width: 700px;
+}
+
+.topleft {
+  margin-top: -3px;
+  margin-bottom: -3px;
+  background: url('res/topleft.gif') top left no-repeat;
+  
+  position: relative;
+}
+
+.topright {
+  background: url('res/topright.gif') top right no-repeat;
+  position: relative;
+}
+
+.bottomleft {
+  background: url('res/bottomleft.gif') bottom left no-repeat;
+  
+  position: relative;
+}
+
+.bottomright {
+  background: url('res/bottomright.gif') bottom right no-repeat;
+  padding: 25px;
+  padding-bottom: 35px;
+  padding-right: 90px;
+  min-height: 100px;
+  text-align: left;
+  position: relative;
+}
+
+.content{
+	float: none;
+	margin-bottom: 15px;
+	word-wrap: break-word;
+}
+
+.selectedContent{
+	text-decoration: underline;
+}
+/** buttons */
+.button::-moz-focus-inner
+    {   
+        border : 0px;
+    } 
+
+.buttonDiv{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	float: none;
+}
+
+.increaseButton{
+	background-image: url('res/good.gif');
+	width: 30px;
+	height: 30px;
+}
+
+.decreaseButton{
+	background-image: url('res/bad.gif');
+	width: 30px;
+	height: 30px;
+}
+
+.button {
+	background-color: white;
+	padding: 0 .5em;
+	margin: 3px;
+	height: 30px;
+	border: 1px solid #CCC;
+	color: black;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	white-space: nowrap;
+	cursor: pointer;
+	overflow: visible;	
+}
+
+.button:hover, .button:focus {
+border-color: #999;
+outline: 0;
+-moz-box-shadow: 0 0 3px #999;
+-webkit-box-shadow: 0 0 3px #999;
+box-shadow: 0 0 3px #999;
+}
+
+.button:active{
+border-color: white;
+outline: 0;
+}
+
+.rateButton{
+	float: left;
+}
+
+.spamButton{
+	background-image: url('res/spam.gif');
+	width: 30px;
+	height: 30px;
+}
+
+.photo{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/** metadata*/
+
+.metadata{
+	font-size: 0.8em;
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+}
+
+.metaElements {
+	float: left;
+	margin: 2px;
+	height: 18px;
+}
+
+.metaElements a{
+	height: 16px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+.metaElements-plus {
+	color:#009900
+}
+	      
+.metaElements-minus {
+	color:#990000
+}	      
+/**answers*/
+.answer{	
+	margin: 4px;	
+}
+
+.answerBarConteiner{
+	font-weight: normal;
+	text-shadow: 0px 0px 3px rgba(255, 255, 255, 1);
+	font-size: 13px;
+	color: #333;
+	float: left;
+	width: 180px;
+	
+}
+
+.answerBar{
+	border: 1px solid #999;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	text-align: center;
+}
+
+.selectedAnswerBar{
+	border: 1px solid #111 !important;
+	
+}
+
+.background1 {
+	background-color: #2daebf;
+}
+
+.background2 {
+	background-color: #e33100;
+}
+
+.background3 {
+	background-color: #91BD09;
+}
+
+.background4 {
+	background-color: #a9014b;
+}
+
+.background5 {
+	background-color: #ffb515;
+}
+
+.background6 {
+	background-color: #ff5c00;
+}
+
+.otherImage{
+	margin: 1px 2px 0px 4px;
+	float: left;
+}
+/**pages*/
+.pages{
+	margin: 20px auto 20px;	
+}
+
+
+/** commentsView */
+
+.textBox{
+	
+}
+
+.commentContainer{
+	width: 850px;
+	margin: 20px auto 20px;
+}
+
+.addComment{	
+	position: relative;
+}
+
+.authorTextBox{
+	margin: 4px;
+	position: relative;
+	height: 22px;
+}
+
+.authorSubmitDiv{
+	margin: auto;
+	width: 350px;
+}
+
+.commentFrame{
+	border: 1px solid #aaa;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	margin: 5px;
+}
+
+.commentFrame-over{
+	background-color: #eee;	
+}
+
+.comment{
+	min-height: 40px;
+	position: relative;
+	padding: 5px 110px 15px 5px;
+}
+
+.comment-spam {
+	min-height: 10px !important;	
+}
+
+
+.commentButtonDiv{
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	float: none;
+}
+
+.commentMetadata{
+	font-size: 0.8em;
+	position: absolute;
+	bottom: 0px;
+}
+
+.commentMetadata div{
+	height: 10px !important;
+}
+
+/** addPostForm*/
+
+.addPostForm{
+	/**width: 600px;*/
+	padding: 15px 35px 5px 10px;
+	margin: auto;
+}
+
+.addPostBox{
+	width: 615px;
+	height: 112px;
+	margin: 3px;
+}
+
+.answerBox {
+	width: 544px;
+	height: 24px;
+	margin: 3px;
+	padding: 1px !important;
+	float: left;
+}
+
+#recaptcha_div {
+	width: 320px;
+	margin: auto;	
+}
+
+.submitDiv {
+	margin: auto;
+	width: 100px;
+}
+
+.addButton{
+	background: url('res/+.gif') center no-repeat;
+	width: 30px;
+	height: 30px;
+}
+
+.delButton{
+	background: url('res/x.gif') center no-repeat;
+	width: 30px;
+	height: 30px;
+}
+
+.anchor{
+	cursor: pointer;
+}
+
+.addPostBody{
+}
+
+.info{
+	margin-left: 10px;
+}
+
+.addPostFrame{
+	padding-right: 0px !important;
+}
+
+.simple{
+	clear: both;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
+.loading {
+	text-align: center;
+	margin: auto;
+}
+
+/** Logos */
+
+.Vk{
+	padding: 0px;
+	background-image: url('res/vklogo.gif');
+	width: 50px;
+	height: 50px;
+}
+
+.gp{
+	padding: 0px;
+	background-image: url('res/g+logo.gif');
+	width: 50px;
+	height: 50px;
+}
+
+.fb{
+	padding: 0px;
+	background-image: url('res/fblogo.gif');
+	width: 50px;
+	height: 50px;
+}
+
+.loginPanel{
+	border-color: #999;
+	outline: 0;
+	-moz-box-shadow: 0 0 3px #999;
+	-webkit-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
+	background-color: #F8F8F8;
+    text-align: center;
+}
+
+.login{
+	padding: 5px 10px 10px 10px;
+}
+
+.logout{
+	padding: 10px 10px 5px 10px;
+}
+
+.loginElement{
+	height:30px;
+}
+
+.embed{
+	float: none;
+	margin-bottom: 15px;
+	word-wrap: break-word;
+	position: relative;	
+}
+
+.closePanel{
+	position:absolute;
+	top:0px;
+	width:100%;
+	height:30px;
+	background-color: #000;
+	opacity: 0.6;
+	filter: alpha(Opacity=60);
+}
+
+.closePanel:HOVER {
+	opacity: 1;
+	filter: alpha(Opacity=100);
+}
+
+.close{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width:85px;
+	height:20px;
+	background-image: url('res/close.png');  
+	background-position: right;
+	background-repeat: no-repeat;
+	font-weight: bold;
+	color: #d8dadd;
+	cursor: pointer;
+}
+
+

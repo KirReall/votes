@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+   
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Votes.html</welcome-file>
+  </welcome-file-list>
+  
+    <!-- Servlets -->
+    <servlet>
+      <servlet-name>renewAllPostsServlet</servlet-name>
+      <servlet-class>votes.server.RenewAllPostsServlet</servlet-class>
+	</servlet>
+    
+    <servlet>
+      <servlet-name>addOtherAnswerServlet</servlet-name>
+      <servlet-class>votes.server.AddOtherAnswerServlet</servlet-class>
+	</servlet>
+	
+    <servlet>
+      <servlet-name>importDataServlet</servlet-name>
+      <servlet-class>votes.server.ImportDataServlet</servlet-class>
+	</servlet>
+    
+	<servlet>
+      <servlet-name>remoteapi</servlet-name>
+      <servlet-class>com.google.apphosting.utils.remoteapi.RemoteApiServlet</servlet-class>
+	</servlet>   
+  
+  <servlet>
+    <servlet-name>postServlet</servlet-name>
+    <servlet-class>votes.server.PostServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>editPostServlet</servlet-name>
+    <servlet-class>votes.server.EditPostServlet</servlet-class>
+  </servlet> 
+  
+  <servlet>
+    <servlet-name>editAnswerServlet</servlet-name>
+    <servlet-class>votes.server.EditAnswerServlet</servlet-class>
+  </servlet>
+    
+  <servlet>
+    <servlet-name>deletePostsServlet</servlet-name>
+    <servlet-class>votes.server.DeletePostsServlet</servlet-class>
+  </servlet>
+   
+  <servlet>
+    <servlet-name>checkCaptchaServlet</servlet-name>
+    <servlet-class>votes.server.CheckCaptchaServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>handleCommentsServlet</servlet-name>
+    <servlet-class>votes.server.HandleCommentsServlet</servlet-class>
+  </servlet>  
+  
+  <servlet>
+    <servlet-name>editCommentServlet</servlet-name>
+    <servlet-class>votes.server.EditCommentServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>downloadDataServlet</servlet-name>
+    <servlet-class>votes.server.DownloadDataServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>postServlet</servlet-name>
+    <url-pattern>/votes/post</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>editPostServlet</servlet-name>
+    <url-pattern>/votes/editpost</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>editAnswerServlet</servlet-name>
+    <url-pattern>/votes/editanswer</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>deletePostsServlet</servlet-name>
+    <url-pattern>/votes/deleteposts</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>checkCaptchaServlet</servlet-name>
+    <url-pattern>/votes/checkcaptcha</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>handleCommentsServlet</servlet-name>
+    <url-pattern>/votes/handlecomments</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>editCommentServlet</servlet-name>
+    <url-pattern>/votes/editcomment</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet-mapping>
+    <servlet-name>downloadDataServlet</servlet-name>
+    <url-pattern>/votes/downloaddata</url-pattern>
+  </servlet-mapping>
+  
+	<servlet-mapping>
+      <servlet-name>remoteapi</servlet-name>
+      <url-pattern>/remote_api</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+      <servlet-name>importDataServlet</servlet-name>
+      <url-pattern>/admin/importData</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+      <servlet-name>addOtherAnswerServlet</servlet-name>
+      <url-pattern>/admin/addOther</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+      <servlet-name>renewAllPostsServlet</servlet-name>
+      <url-pattern>/admin/renew</url-pattern>
+	</servlet-mapping>
+  
+  <security-constraint>
+        <web-resource-collection>
+        	<web-resource-name>admin</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+ 
+	<security-constraint>
+      <web-resource-collection>
+            <web-resource-name>remoteapi</web-resource-name>
+            <url-pattern>/remote_api</url-pattern>
+       </web-resource-collection>
+       <auth-constraint>
+              <role-name>admin</role-name>
+       </auth-constraint>
+	</security-constraint>
+
+</web-app>
