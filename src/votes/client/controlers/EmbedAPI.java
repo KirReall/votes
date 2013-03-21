@@ -47,6 +47,8 @@ public class EmbedAPI {
 				}
 				if (! html.isEmpty()){
 					controler.setEmbed(html);
+				} else {
+					controler.setEmbedError();
 				}
 			}
 

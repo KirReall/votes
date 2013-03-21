@@ -95,12 +95,21 @@ public class AddPostView extends View {
 				}
 				Integer keyCode = event.getNativeKeyCode();
 				if ((keyCode.equals(32)||keyCode.equals(13))&&(embedView.isEmbedEmpty())) {
-					controler.findEmbed(tbValue);
+					
 				}
 			}
 		});
 	    
 	    embedView = new EmbedView();
+	    
+	    embedView.addEmbedDoneHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				controler.getEmbed(embedView.getAddEmbed());
+				
+			}
+		});
 	    
 	    answersPanel = new FlowPanel();
 	    answersPanel.setWidth("590px");
@@ -374,6 +383,13 @@ public class AddPostView extends View {
 		embedView.setEmbed(html);
 	}
 	
+	public void setEmbedLoadImg(){
+		embedView.setLoadImg();
+	}
+	
+	public void setEmbedError(){
+		embedView.setEmbedError();
+	}
 
 }
 

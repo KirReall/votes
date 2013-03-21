@@ -55,13 +55,24 @@ public class AddPostControler extends Controler{
 				embedURL = embedURL.substring(0,firstSpace);
 			}
 			embedAPI.getEmbed(embedURL);
+			((AddPostView)view).setEmbedLoadImg();
 		}
 		
+	}
+	
+	public void getEmbed(String url){
+		embedAPI.getEmbed(url);
+		((AddPostView)view).setEmbedLoadImg();
 	}
 
 	public void setEmbed(String html) {
 		((AddPostView)view).setEmbed(html);
-		
 	}
+	
+	public void setEmbedError() {
+		((AddPostView)view).setEmbedError();		
+	}
+	
 
+	
 }

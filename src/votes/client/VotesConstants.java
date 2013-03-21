@@ -31,4 +31,7 @@ public interface VotesConstants extends Constants {
 	String Other();
 	String Login();
 	String Logout();
+	String Done();
+	String ErrorGetingEmbed();
+	String Close();
 }

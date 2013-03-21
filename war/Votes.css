@@ -506,4 +506,52 @@ outline: 0;
 	cursor: pointer;
 }
 
+.addEmbed{
+	height: 0px;
+	transition: all 10s ease-out;
+	-webkit-transition: all 10s ease-out;
+}
 
+.addEmbed-visible{
+	background-color: rgb(240, 241, 243);
+	background-image: url('res/linkblue.png');
+	background-repeat: no-repeat;
+	background-position: 15px 8px;
+	margin-top: -6px;
+	margin-left: 3px;
+	margin-right: 6px;
+	border-bottom-left-radius: 8em 7em;
+	border-bottom-right-radius: 8em 7em;
+	border-bottom: 1px solid #999;
+	height: 40px;
+	transition: all 10s ease-out;
+	-webkit-transition: all 10s ease-out;
+}
+
+.addEmbedButton{
+	position: absolute;
+    top: 138px;
+	right: 44px;
+    background: url("res/linkgray.png");
+    width: 18px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.addEmbedButton:HOVER {
+	background: url('res/linkblue.png');
+}
+
+.addEmbedBox{
+	width: 480px;
+	height: 24px;
+	margin: 3px 1px 1px 40px;
+	padding: 1px !important;
+	float: left;
+}
+
+.embedError{
+	margin: 4px 4px 0px 4px;
+	text-align: center;
+	color: #990000;
+}
