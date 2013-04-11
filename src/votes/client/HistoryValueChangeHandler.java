@@ -53,11 +53,6 @@ public class HistoryValueChangeHandler implements ValueChangeHandler<String> {
 	public void onValueChange(ValueChangeEvent<String> event) {
 		RootPanel.get("body").clear();
 		final String token = event.getValue();
-		FlowPanel imgPanel = new FlowPanel();
-		Image img = new Image("res/1.gif");
-		imgPanel.setStyleName("loading");
-		imgPanel.add(img);
-		RootPanel.get("body").add(imgPanel);
 		// RootPanel.getBodyElement().insertAfter(RootPanel.get("loadingWrapper").getElement(),
 		// RootPanel.get("body").getElement());
 

@@ -308,6 +308,7 @@ public class EventBusBinder {
 
 	protected void getPosts(Long currentPage, String orderField, Boolean my,
 			final ListOfPostView view) {
+		view.setLoadImg();
 		UserAccountInfo user = authManager.getCurrentUser().getUserAccount();
 		postService.getPosts(currentPage, orderField, my, user, new AsyncCallback<List<PostTransported>>() {
 

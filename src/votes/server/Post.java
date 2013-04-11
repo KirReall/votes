@@ -162,7 +162,11 @@ public class Post{
 	}
 	
     public String getEmbed() {
-		return embed.getValue();
+    	if (embed==null){
+    		setEmbed("");
+    	}
+    	return embed.getValue();
+    	
 	}
 
 	public void setEmbed(String embed) {

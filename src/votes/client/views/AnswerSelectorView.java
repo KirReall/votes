@@ -58,7 +58,8 @@ public class AnswerSelectorView extends View {
 		otherPanel.setWidth("100%");
 		otherPanel.add(otherAnswerPanel);
 		newOtherAnswerPanel.setVisible(false);		
-		answer.addStyleName("answerBox");
+		answer.setStyleName("answerBox");
+		answer.addStyleName("otherAnswerBox");
 		answer.addStyleName("textBox");
 		addNewAnswer.setStyleName("button");
 		addNewAnswer.addStyleName("addButton");

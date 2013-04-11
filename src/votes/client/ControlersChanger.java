@@ -148,7 +148,8 @@ public class ControlersChanger {
 	}
 
 	private void show() {
-
+		RootPanel.get("loadimg").setVisible(false);
+		
 		bodyControler.showView(RootPanel.get("body"));
 	}
 

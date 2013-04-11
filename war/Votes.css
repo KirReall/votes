@@ -367,12 +367,17 @@ outline: 0;
 }
 
 .answerBox {
-	width: 544px;
+	width: 542px;
 	height: 24px;
 	margin: 3px;
 	padding: 1px !important;
 	float: left;
 }
+
+.otherAnswerBox {
+	width: 520px !important;
+}
+
 
 #recaptcha_div {
 	width: 320px;

@@ -251,7 +251,7 @@ public class PostServiceImpl extends RemoteServiceServlet implements
 		com.google.appengine.api.datastore.Query query = new com.google.appengine.api.datastore.Query(
 				"Post");
 		query.setKeysOnly();
-		query.addFilter("published", FilterOperator.EQUAL, Boolean.TRUE);
+		//query.addFilter("published", FilterOperator.EQUAL, Boolean.TRUE);
 		FetchOptions fetchOptions = FetchOptions.Builder.withOffset(0);
 		PreparedQuery preparedQuery = datastore.prepare(query);
 		Integer result = preparedQuery.asList(fetchOptions).size();

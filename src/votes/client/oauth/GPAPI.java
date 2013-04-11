@@ -72,7 +72,7 @@ public class GPAPI implements SocialAPI {
 				.encode("https://www.googleapis.com/plus/v1/people/me/people/visible?"
 						+ "pageToken="
 						+ pageToken
-						+ "&fields==items(displayName,id,image,name(familyName,givenName)),nextPageToken,totalItems"
+						+ "&fields=items(displayName,id,image,name(familyName,givenName)),nextPageToken,totalItems"
 						+ "&pp=1"
 						+ "&access_token="
 						+ authManager.getAccessToken());
