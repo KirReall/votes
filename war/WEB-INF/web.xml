@@ -50,11 +50,6 @@
     <servlet-name>deletePostsServlet</servlet-name>
     <servlet-class>votes.server.DeletePostsServlet</servlet-class>
   </servlet>
-   
-  <servlet>
-    <servlet-name>checkCaptchaServlet</servlet-name>
-    <servlet-class>votes.server.CheckCaptchaServlet</servlet-class>
-  </servlet>
   
   <servlet>
     <servlet-name>handleCommentsServlet</servlet-name>
@@ -89,11 +84,6 @@
   <servlet-mapping>
     <servlet-name>deletePostsServlet</servlet-name>
     <url-pattern>/votes/deleteposts</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-    <servlet-name>checkCaptchaServlet</servlet-name>
-    <url-pattern>/votes/checkcaptcha</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>

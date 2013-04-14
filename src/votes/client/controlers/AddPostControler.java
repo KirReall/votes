@@ -42,7 +42,6 @@ public class AddPostControler extends Controler{
 	
 	public void showView(final HasWidgets container){
 		((AddPostView)view).initView();
-		((AddPostView)view).setCaptcha(false);
 		//eventBus.fireEvent(new IsUserLoginEvent((AddPostView)view));	
 		super.showView(container);
 	}

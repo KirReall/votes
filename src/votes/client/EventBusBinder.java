@@ -28,8 +28,6 @@ import votes.client.event.GetPostEvent;
 import votes.client.event.GetPostEventHandler;
 import votes.client.event.GetPostsEvent;
 import votes.client.event.GetPostsEventHandler;
-import votes.client.event.IsUserLoginEvent;
-import votes.client.event.IsUserLoginEventHandler;
 import votes.client.event.LoginEvent;
 import votes.client.event.LoginEventHandler;
 import votes.client.event.LogoutEvent;
@@ -38,7 +36,6 @@ import votes.client.event.SetSpamCommentEvent;
 import votes.client.event.SetSpamCommentEventHandler;
 import votes.client.oauth.AuthManager;
 import votes.client.oauth.CurrentUser;
-import votes.client.views.AddPostView;
 import votes.client.views.AnswerSelectorView;
 import votes.client.views.ListOfPostView;
 import votes.client.views.PostAndCommentsView;
@@ -218,14 +215,6 @@ public class EventBusBinder {
 
 		});
 		
-		eventBus.addHandler(IsUserLoginEvent.TYPE, new IsUserLoginEventHandler() {
-
-			@Override
-			public void onUserLoginRequest(IsUserLoginEvent event) {
-				requestUserLogin(event.getView());
-			}
-
-		});
 	}
 	
 
@@ -276,13 +265,6 @@ public class EventBusBinder {
 
 	}
 	
-	protected void requestUserLogin(AddPostView view) {
-		if (authManager.getCurrentUser().getUserService()!=UserAccountInfo.UNAUTHORIZED){
-			view.setCaptcha(false);
-		} else {
-			view.setCaptcha(true);
-		}		
-	}
 
 	protected void getPost(Long postId, final PostAndCommentsView view) {
 		UserAccountInfo user = authManager.getCurrentUser().getUserAccount();

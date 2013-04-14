@@ -10,10 +10,8 @@ import votes.client.event.ChangeRateOfOtherAnswerEvent;
 import votes.client.event.GetFriendsAnswersEvent;
 import votes.client.event.GetOtherAnswersEvent;
 import votes.client.event.GetOtherFriendsAnswersEvent;
-import votes.client.oauth.Friend;
 import votes.shared.AnswerTransported;
 import votes.shared.UserAccountInfo;
-import votes.shared.UserVoteTransported;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;

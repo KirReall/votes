@@ -8,25 +8,18 @@ import votes.client.controlers.AddPostControler;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.event.dom.client.MouseOutEvent;
-import com.google.gwt.event.dom.client.MouseOutHandler;
-import com.google.gwt.event.dom.client.MouseOverEvent;
-import com.google.gwt.event.dom.client.MouseOverHandler;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.shared.HasHandlers;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FormPanel;
@@ -36,7 +29,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.SimplePanel;
+import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.TextArea;
 
 public class AddPostView extends View {
@@ -49,8 +42,6 @@ public class AddPostView extends View {
 	private ExtendedTextArea tb;
 	private EmbedView embedView;
 	private FlowPanel answersPanel;
-	private ReCaptchaView captcha;
-	private Boolean enableCaptcha;
 	private FlowPanel info;
 	private List<AddAnswerView> answers = new ArrayList<AddAnswerView>();
 	private VotesConstants constants = GWT.create(VotesConstants.class);
@@ -121,11 +112,7 @@ public class AddPostView extends View {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				if (isEnableCaptcha()){
-					formPanel.submit();
-				} else {
-					HandleSubmitEvent();
-				}
+				HandleSubmitEvent();
 			}
 		});
 		
@@ -139,23 +126,9 @@ public class AddPostView extends View {
 	    
 	    formPanel = new FormPanel();
 	    formPanel.setMethod("POST");
-	    formPanel.setAction("/votes/checkcaptcha");
 	    formPanel.add(vPanel);
 	    formPanel.setStyleName("addPostForm");
-	    formPanel.addSubmitCompleteHandler(new SubmitCompleteHandler() {
-			
-			@Override
-			public void onSubmitComplete(SubmitCompleteEvent event) {
-				// TODO Auto-generated method stub
-				String result = event.getResults();
-				if (("<pre></pre>".equals(result))||("".equals(result))){
-					HandleSubmitEvent();
-				} else {
-					setError("<b>"+constants.BadReCaptcha()+"</b>");
-					captcha.createNewChallenge();
-				}
-			}
-		});
+	  
 		ViewsFrame plane = new ViewsFrame();
 		plane.addStyleName("addPostFrame");
 		
@@ -189,7 +162,13 @@ public class AddPostView extends View {
 		String content = tb.getValue();
 		List<String> answersContent = getAnswersContent();
 		String embedContent = embedView.getEmbed();
-				
+		PopupPanel popup = new PopupPanel();
+		HTML load = new HTML();
+		load.setHTML("<style>.bubblingG {text-align: center;width:80px;height:50px; margin:auto;}.bubblingG span {display: inline-block;vertical-align: middle;width: 10px;height: 10px;margin: 25px auto;background: #000000;-moz-border-radius: 50px;-moz-animation: bubblingG 1.3s infinite alternate;-webkit-border-radius: 50px;-webkit-animation: bubblingG 1.3s infinite alternate;-ms-border-radius: 50px;-ms-animation: bubblingG 1.3s infinite alternate;-o-border-radius: 50px;-o-animation: bubblingG 1.3s infinite alternate;border-radius: 50px;animation: bubblingG 1.3s infinite alternate;}#bubblingG_1 {-moz-animation-delay: 0s;-webkit-animation-delay: 0s;-ms-animation-delay: 0s;-o-animation-delay: 0s;animation-delay: 0s;}#bubblingG_2 {-moz-animation-delay: 0.39s;-webkit-animation-delay: 0.39s;-ms-animation-delay: 0.39s;-o-animation-delay: 0.39s;animation-delay: 0.39s;}#bubblingG_3 {-moz-animation-delay: 0.78s;-webkit-animation-delay: 0.78s;-ms-animation-delay: 0.78s;-o-animation-delay: 0.78s;animation-delay: 0.78s;}@-moz-keyframes bubblingG {0% {width: 10px;height: 10px;background-color:#000000;-moz-transform: translateY(0);}100% {width: 24px;height: 24px;background-color:#FFFFFF;-moz-transform: translateY(-21px);}}@-webkit-keyframes bubblingG {0% {width: 10px;height: 10px;background-color:#000000;-webkit-transform: translateY(0);}100% {width: 24px;height: 24px;background-color:#FFFFFF;-webkit-transform: translateY(-21px);}}@-ms-keyframes bubblingG {0% {width: 10px;height: 10px;background-color:#000000;-ms-transform: translateY(0);}100% {width: 24px;height: 24px;background-color:#FFFFFF;-ms-transform: translateY(-21px);}}@-o-keyframes bubblingG {0% {width: 10px;height: 10px;background-color:#000000;-o-transform: translateY(0);}100% {width: 24px;height: 24px;background-color:#FFFFFF;-o-transform: translateY(-21px);}}@keyframes bubblingG {0% {width: 10px;height: 10px;background-color:#000000;transform: translateY(0);}100% {width: 24px;height: 24px;background-color:#FFFFFF;transform: translateY(-21px);}}</style><div class='bubblingG'><span id='bubblingG_1'></span><span id='bubblingG_2'></span><span id='bubblingG_3'></span></div>");
+		popup.add(load);
+		popup.setGlassEnabled(true);
+		popup.show();
+		
 		controler.HandleSubmitEvent(content, answersContent, embedContent);
 	}
 
@@ -226,8 +205,6 @@ public class AddPostView extends View {
 	    operationAnswersPanel.setCellVerticalAlignment(addAnswerButton, HasVerticalAlignment.ALIGN_BOTTOM);
 	    vPanel.add(operationAnswersPanel);
 	    
-	    captcha = new ReCaptchaView();
-	    vPanel.add(captcha);
 	    FlowPanel submitButtonDiv = new FlowPanel();
 	    submitButtonDiv.setStyleName("submitDiv");
 	    submitButtonDiv.add(submitButton);
@@ -298,22 +275,6 @@ public class AddPostView extends View {
 	public HasHandlers getForm(){
 		return formPanel;
 	}
-	
-	public void setCaptcha(Boolean enable){
-		setEnableCaptcha(enable);
-		if (!enable){
-			vPanel.remove(captcha);
-		}		
-	}
-
-	public Boolean isEnableCaptcha() {
-		return enableCaptcha;
-	}
-
-	public void setEnableCaptcha(Boolean enableCaptcha) {
-		this.enableCaptcha = enableCaptcha;
-	}
-	
 	
 	
 	private interface OnPasteHandler extends EventHandler {

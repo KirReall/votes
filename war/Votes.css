@@ -529,8 +529,8 @@ outline: 0;
 	border-bottom-right-radius: 8em 7em;
 	border-bottom: 1px solid #999;
 	height: 40px;
-	transition: all 10s ease-out;
-	-webkit-transition: all 10s ease-out;
+	transition: all 0.7s ease-out;
+	-webkit-transition: all 0.7s ease-out;
 }
 
 .addEmbedButton{
